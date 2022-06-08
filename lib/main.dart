@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_isolate_demo/first_isolate.dart';
+import 'package:flutter_isolate_demo/second_isolate.dart';
+import 'package:flutter_isolate_demo/third_isolate.dart';
 
 void main() {
   runApp(const MyApp());
@@ -76,13 +78,28 @@ class HomeStateState extends State<Home> with TickerProviderStateMixin {
               ),
             ),
           ),
-          Center(
-            child: ElevatedButton(
-              child: const Text('Run Isolate 1'),
-              onPressed: () {
-                FirstIsolate().runIsolate();
-              },
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                child: const Text('Run Isolate 1'),
+                onPressed: () {
+                  FirstIsolate().runIsolate();
+                },
+              ),
+              ElevatedButton(
+                child: const Text('Run Isolate 2'),
+                onPressed: () {
+                  SecondIsolate().runIsolate();
+                },
+              ),
+              ElevatedButton(
+                child: const Text('Run Isolate 3'),
+                onPressed: () {
+                  ThirdIsolate().runIsolate();
+                },
+              ),
+            ],
           ),
         ],
       ),
